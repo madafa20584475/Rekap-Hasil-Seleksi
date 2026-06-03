@@ -4,407 +4,540 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>REKAPITULASI KELENGKAPAN SELEKSI SANTRI BARU</title>
-    <!-- Menggunakan Tailwind CSS v3 (Stable Version untuk GitHub Pages) -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Menggunakan CSS Standar agar 100% Terbaca di Server GitHub -->
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f3f4f6;
+            color: #1f2937;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .header-card {
+            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            margin-bottom: 24px;
+        }
+        .header-card h1 {
+            margin: 0 0 5px 0;
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+        .header-card p {
+            margin: 0;
+            color: #93c5fd;
+            font-size: 14px;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 25px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+        }
+        .stat-box {
+            background: rgba(255,255,255,0.05);
+            padding: 12px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .stat-box p {
+            margin: 0;
+            font-size: 11px;
+            color: #cbd5e1;
+        }
+        .stat-box .num {
+            margin-top: 5px;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+        }
+        .search-container {
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+            margin-bottom: 20px;
+        }
+        .search-box {
+            width: 100%;
+            max-width: 350px;
+            padding: 10px 15px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        .search-box:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        .table-wrapper {
+            background: white;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+            overflow-x: auto;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 14px;
+        }
+        th {
+            background: #f9fafb;
+            padding: 14px 16px;
+            color: #4b5563;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            border-bottom: 2px solid #e5e7eb;
+        }
+        td {
+            padding: 12px 16px;
+            border-bottom: 1px solid #f3f4f6;
+            color: #374151;
+        }
+        tr:hover td {
+            background-color: #f9fafb;
+        }
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .badge-success { background: #d1fae5; color: #065f46; }
+        .badge-warning { background: #fef3c7; color: #92400e; }
+        .badge-info { background: #dbeafe; color: #1e40af; }
+        .badge-empty { color: #9ca3af; font-weight: bold; }
+        .name-column { font-weight: 700; color: #111827; }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800 min-h-screen">
+<body>
 
-    <div class="max-w-7xl mx-auto px-4 py-8">
-        <!-- HEADER DASHBOARD UTAMA -->
-        <div class="bg-gradient-to-r from-blue-900 to-indigo-950 rounded-2xl p-6 md:p-8 text-white shadow-xl mb-8">
-            <span class="bg-blue-500/20 text-blue-300 font-semibold text-xs px-3 py-1 rounded-full uppercase tracking-wider">PANITIA SELEKSI PSB</span>
-            <h1 class="text-2xl md:text-4xl font-extrabold mt-3 tracking-tight">REKAPITULASI KELENGKAPAN SELEKSI SANTRI BARU</h1>
-            <p class="text-blue-200/80 mt-2 font-medium text-sm md:text-base">MA Darul Falah Sukorejo — Tahun Ajaran 2026/2027</p>
+    <div class="container">
+        <!-- HEADER UTAMA -->
+        <div class="header-card">
+            <p style="color: #60a5fa; font-weight: bold; letter-spacing: 1px; margin-bottom: 5px;">PANITIA SELEKSI PSB</p>
+            <h1>REKAPITULASI KELENGKAPAN SELEKSI SANTRI BARU</h1>
+            <p>MA Darul Falah Sukorejo — Tahun Ajaran 2026/2027</p>
             
-            <!-- RINGKASAN DATA STATISTIK -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 pt-6 border-t border-white/10 text-center md:text-left">
-                <div class="bg-white/5 rounded-xl p-3">
-                    <p class="text-xs text-blue-200/60 font-medium">Total Calon Santri</p>
-                    <p class="text-2xl font-bold mt-1 text-white">39 Anak</p>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <p>Total Calon Santri</p>
+                    <div class="num">39 Anak</div>
                 </div>
-                <div class="bg-white/5 rounded-xl p-3">
-                    <p class="text-xs text-emerald-300/80 font-medium">Selesai Utama</p>
-                    <p class="text-2xl font-bold mt-1 text-emerald-300">22 Anak</p>
+                <div class="stat-box">
+                    <p style="color: #34d399;">Selesai Utama</p>
+                    <div class="num" style="color: #34d399;">22 Anak</div>
                 </div>
-                <div class="bg-white/5 rounded-xl p-3">
-                    <p class="text-xs text-amber-300/80 font-medium">Status Izin / Pending</p>
-                    <p class="text-2xl font-bold mt-1 text-amber-300">15 Anak</p>
+                <div class="stat-box">
+                    <p style="color: #fbbf24;">Status Izin / Pending</p>
+                    <div class="num" style="color: #fbbf24;">15 Anak</div>
                 </div>
-                <div class="bg-white/5 rounded-xl p-3">
-                    <p class="text-xs text-blue-300/80 font-medium">Pendaftar Baru</p>
-                    <p class="text-2xl font-bold mt-1 text-blue-300">2 Anak</p>
+                <div class="stat-box">
+                    <p style="color: #60a5fa;">Pendaftar Baru</p>
+                    <div class="num" style="color: #60a5fa;">2 Anak</div>
                 </div>
             </div>
         </div>
 
-        <!-- FITUR INTERAKTIF: PENCARIAN & KETERANGAN STATUS -->
-        <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-4 mb-6 flex flex-col md:flex-row gap-4 items-center justify-between">
-            <div class="relative w-full md:w-96">
-                <input type="text" id="searchBar" onkeyup="filterTable()" placeholder="Cari nama anak atau asal sekolah..." 
-                       class="w-full pl-4 pr-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white text-sm transition-all duration-200">
-            </div>
-            <div class="flex flex-wrap gap-2 w-full md:w-auto justify-end">
-                <span class="text-xs text-gray-400 self-center mr-2 font-medium">Indikator:</span>
-                <span class="px-2.5 py-1 text-xs font-semibold rounded-md bg-emerald-50 text-emerald-700 border border-emerald-200">✓ Selesai</span>
-                <span class="px-2.5 py-1 text-xs font-semibold rounded-md bg-amber-50 text-amber-700 border border-amber-200">⏳ Izin</span>
-                <span class="px-2.5 py-1 text-xs font-semibold rounded-md bg-blue-50 text-blue-700 border border-blue-200">✨ Baru</span>
-                <span class="px-2.5 py-1 text-xs font-semibold rounded-md bg-gray-100 text-gray-400 border border-gray-200">- Belum</span>
-            </div>
+        <!-- FITUR PENCARIAN -->
+        <div class="search-container">
+            <input type="text" id="searchBar" onkeyup="filterTable()" placeholder="Cari nama anak atau asal sekolah..." class="search-box">
         </div>
 
-        <!-- TABEL UTAMA DATA CHECKLIST -->
-        <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-            <div class="overflow-x-auto">
-                <table class="w-full text-left border-collapse" id="santriTable">
-                    <thead>
-                        <tr class="bg-gray-50 border-b border-gray-200 text-gray-600 font-semibold text-xs tracking-wider uppercase">
-                            <th class="py-4 px-4 text-center w-16">No</th>
-                            <th class="py-4 px-6 min-w-[280px]">Nama Calon Santri</th>
-                            <th class="py-4 px-6 min-w-[200px]">Asal Sekolah</th>
-                            <th class="py-4 px-4 text-center min-w-[140px]">Tes Psikologi</th>
-                            <th class="py-4 px-4 text-center min-w-[140px]">Ngaji Ummi</th>
-                            <th class="py-4 px-4 text-center min-w-[140px]">Interview Wali</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-gray-100 text-sm font-medium text-gray-700">
-                        <tr class="hover:bg-gray-50/80 transition-colors">
-                            <td class="py-3.5 px-4 text-center font-semibold text-gray-400 bg-gray-50/30">1</td>
-                            <td class="py-3.5 px-6 font-bold text-gray-900 tracking-tight">Ocehren Noryn Mila Rahmawati</td>
-                            <td class="py-3.5 px-6 font-medium text-gray-500">MTs Darul Falah</td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="text-gray-300 font-bold">-</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                        </tr>
-                        <tr class="hover:bg-gray-50/80 transition-colors">
-                            <td class="py-3.5 px-4 text-center font-semibold text-gray-400 bg-gray-50/30">2</td>
-                            <td class="py-3.5 px-6 font-bold text-gray-900 tracking-tight">Kuni Mahbubah</td>
-                            <td class="py-3.5 px-6 font-medium text-gray-500">MTs Darul Falah</td>
-                            <td class="py-3.5 px-4 text-center"><span class="px-2.5 py-1 text-xs font-bold rounded-lg bg-amber-50 text-amber-700 border border-amber-200 tracking-wide">IZIN</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="px-2.5 py-1 text-xs font-bold rounded-lg bg-amber-50 text-amber-700 border border-amber-200 tracking-wide">IZIN</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="px-2.5 py-1 text-xs font-bold rounded-lg bg-amber-50 text-amber-700 border border-amber-200 tracking-wide">IZIN</span></td>
-                        </tr>
-                        <tr class="hover:bg-gray-50/80 transition-colors">
-                            <td class="py-3.5 px-4 text-center font-semibold text-gray-400 bg-gray-50/30">3</td>
-                            <td class="py-3.5 px-6 font-bold text-gray-900 tracking-tight">Ezza Zharifa Putri Rahmadita</td>
-                            <td class="py-3.5 px-6 font-medium text-gray-500">MTs Darul Falah</td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="text-gray-300 font-bold">-</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                        </tr>
-                        <tr class="hover:bg-gray-50/80 transition-colors">
-                            <td class="py-3.5 px-4 text-center font-semibold text-gray-400 bg-gray-50/30">4</td>
-                            <td class="py-3.5 px-6 font-bold text-gray-900 tracking-tight">Aprilia Yaski Andria</td>
-                            <td class="py-3.5 px-6 font-medium text-gray-500">MTs Darul Falah</td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="text-gray-300 font-bold">-</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="px-2.5 py-1 text-xs font-bold rounded-lg bg-amber-50 text-amber-700 border border-amber-200 tracking-wide">IZIN</span></td>
-                        </tr>
-                        <tr class="hover:bg-gray-50/80 transition-colors">
-                            <td class="py-3.5 px-4 text-center font-semibold text-gray-400 bg-gray-50/30">5</td>
-                            <td class="py-3.5 px-6 font-bold text-gray-900 tracking-tight">Ayatul Zhahra</td>
-                            <td class="py-3.5 px-6 font-medium text-gray-500">MTs Darul Falah</td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="text-gray-300 font-bold">-</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                        </tr>
-                        <tr class="hover:bg-gray-50/80 transition-colors">
-                            <td class="py-3.5 px-4 text-center font-semibold text-gray-400 bg-gray-50/30">6</td>
-                            <td class="py-3.5 px-6 font-bold text-gray-900 tracking-tight">Fairuz Auroera Nafisah</td>
-                            <td class="py-3.5 px-6 font-medium text-gray-500">MTs Darul Falah</td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="text-gray-300 font-bold">-</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                        </tr>
-                        <tr class="hover:bg-gray-50/80 transition-colors">
-                            <td class="py-3.5 px-4 text-center font-semibold text-gray-400 bg-gray-50/30">7</td>
-                            <td class="py-3.5 px-6 font-bold text-gray-900 tracking-tight">Caesa Atikha Dama Fadhila</td>
-                            <td class="py-3.5 px-6 font-medium text-gray-500">MTs Darul Falah</td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="text-gray-300 font-bold">-</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                        </tr>
-                        <tr class="hover:bg-gray-50/80 transition-colors">
-                            <td class="py-3.5 px-4 text-center font-semibold text-gray-400 bg-gray-50/30">8</td>
-                            <td class="py-3.5 px-6 font-bold text-gray-900 tracking-tight">Caesa Atikha Dama Rizqiya</td>
-                            <td class="py-3.5 px-6 font-medium text-gray-500">MTs Darul Falah</td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="text-gray-300 font-bold">-</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                        </tr>
-                        <tr class="hover:bg-gray-50/80 transition-colors">
-                            <td class="py-3.5 px-4 text-center font-semibold text-gray-400 bg-gray-50/30">9</td>
-                            <td class="py-3.5 px-6 font-bold text-gray-900 tracking-tight">Lovenzza Aurel Cella Azzahra</td>
-                            <td class="py-3.5 px-6 font-medium text-gray-500">MTs Darul Falah</td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="text-gray-300 font-bold">-</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                        </tr>
-                        <tr class="hover:bg-gray-50/80 transition-colors">
-                            <td class="py-3.5 px-4 text-center font-semibold text-gray-400 bg-gray-50/30">10</td>
-                            <td class="py-3.5 px-6 font-bold text-gray-900 tracking-tight">Jameela Wifaq Ro</td>
-                            <td class="py-3.5 px-6 font-medium text-gray-500">MTs Darul Falah</td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="text-gray-300 font-bold">-</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="px-2.5 py-1 text-xs font-bold rounded-lg bg-amber-50 text-amber-700 border border-amber-200 tracking-wide">IZIN</span></td>
-                        </tr>
-                        <tr class="hover:bg-gray-50/80 transition-colors">
-                            <td class="py-3.5 px-4 text-center font-semibold text-gray-400 bg-gray-50/30">11</td>
-                            <td class="py-3.5 px-6 font-bold text-gray-900 tracking-tight">Cantika Zaneta Merisqueen</td>
-                            <td class="py-3.5 px-6 font-medium text-gray-500">MTsN DARUL FALAH</td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="text-gray-300 font-bold">-</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                        </tr>
-                        <tr class="hover:bg-gray-50/80 transition-colors">
-                            <td class="py-3.5 px-4 text-center font-semibold text-gray-400 bg-gray-50/30">12</td>
-                            <td class="py-3.5 px-6 font-bold text-gray-900 tracking-tight">Athiyya Ghalia Mu'afira</td>
-                            <td class="py-3.5 px-6 font-medium text-gray-500">MTs Darul Falah</td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="text-gray-300 font-bold">-</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="px-2.5 py-1 text-xs font-bold rounded-lg bg-amber-50 text-amber-700 border border-amber-200 tracking-wide">IZIN</span></td>
-                        </tr>
-                        <tr class="hover:bg-gray-50/80 transition-colors">
-                            <td class="py-3.5 px-4 text-center font-semibold text-gray-400 bg-gray-50/30">13</td>
-                            <td class="py-3.5 px-6 font-bold text-gray-900 tracking-tight">Yullyan Triyasnawi</td>
-                            <td class="py-3.5 px-6 font-medium text-gray-500">MTs Darul Falah</td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="text-gray-300 font-bold">-</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                        </tr>
-                        <tr class="hover:bg-gray-50/80 transition-colors">
-                            <td class="py-3.5 px-4 text-center font-semibold text-gray-400 bg-gray-50/30">14</td>
-                            <td class="py-3.5 px-6 font-bold text-gray-900 tracking-tight">Amira Hilmi Mahmudiana</td>
-                            <td class="py-3.5 px-6 font-medium text-gray-500">MTs Darul Falah</td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="text-gray-300 font-bold">-</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                        </tr>
-                        <tr class="hover:bg-gray-50/80 transition-colors">
-                            <td class="py-3.5 px-4 text-center font-semibold text-gray-400 bg-gray-50/30">15</td>
-                            <td class="py-3.5 px-6 font-bold text-gray-900 tracking-tight">Aidil Firman Nurhakim</td>
-                            <td class="py-3.5 px-6 font-medium text-gray-500">MTs Darul Falah</td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="text-gray-300 font-bold">-</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                        </tr>
-                        <tr class="hover:bg-gray-50/80 transition-colors">
-                            <td class="py-3.5 px-4 text-center font-semibold text-gray-400 bg-gray-50/30">16</td>
-                            <td class="py-3.5 px-6 font-bold text-gray-900 tracking-tight">Muhammad Rayhan Endrika Saputra</td>
-                            <td class="py-3.5 px-6 font-medium text-gray-500">MTs Darul Falah</td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="text-gray-300 font-bold">-</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                        </tr>
-                        <tr class="hover:bg-gray-50/80 transition-colors">
-                            <td class="py-3.5 px-4 text-center font-semibold text-gray-400 bg-gray-50/30">17</td>
-                            <td class="py-3.5 px-6 font-bold text-gray-900 tracking-tight">M. Fitroh F.</td>
-                            <td class="py-3.5 px-6 font-medium text-gray-500">MTs Darul Falah</td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="text-gray-300 font-bold">-</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="px-2.5 py-1 text-xs font-bold rounded-lg bg-amber-50 text-amber-700 border border-amber-200 tracking-wide">IZIN</span></td>
-                        </tr>
-                        <tr class="hover:bg-gray-50/80 transition-colors">
-                            <td class="py-3.5 px-4 text-center font-semibold text-gray-400 bg-gray-50/30">18</td>
-                            <td class="py-3.5 px-6 font-bold text-gray-900 tracking-tight">Agung Husada</td>
-                            <td class="py-3.5 px-6 font-medium text-gray-500">MTs Darul Falah</td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="text-gray-300 font-bold">-</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="px-2.5 py-1 text-xs font-bold rounded-lg bg-amber-50 text-amber-700 border border-amber-200 tracking-wide">IZIN</span></td>
-                        </tr>
-                        <tr class="hover:bg-gray-50/80 transition-colors">
-                            <td class="py-3.5 px-4 text-center font-semibold text-gray-400 bg-gray-50/30">19</td>
-                            <td class="py-3.5 px-6 font-bold text-gray-900 tracking-tight">Hafis Choirur Raafi</td>
-                            <td class="py-3.5 px-6 font-medium text-gray-500">MTs Darul Falah</td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="text-gray-300 font-bold">-</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                        </tr>
-                        <tr class="hover:bg-gray-50/80 transition-colors">
-                            <td class="py-3.5 px-4 text-center font-semibold text-gray-400 bg-gray-50/30">20</td>
-                            <td class="py-3.5 px-6 font-bold text-gray-900 tracking-tight">Muhammad Hanan Ghifari</td>
-                            <td class="py-3.5 px-6 font-medium text-gray-500">MTs Darul Falah</td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="text-gray-300 font-bold">-</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="px-2.5 py-1 text-xs font-bold rounded-lg bg-amber-50 text-amber-700 border border-amber-200 tracking-wide">IZIN</span></td>
-                        </tr>
-                        <tr class="hover:bg-gray-50/80 transition-colors">
-                            <td class="py-3.5 px-4 text-center font-semibold text-gray-400 bg-gray-50/30">21</td>
-                            <td class="py-3.5 px-6 font-bold text-gray-900 tracking-tight">Hafitzy Al Faizy</td>
-                            <td class="py-3.5 px-6 font-medium text-gray-500">MTs Darul Falah</td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="text-gray-300 font-bold">-</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                        </tr>
-                        <tr class="hover:bg-gray-50/80 transition-colors">
-                            <td class="py-3.5 px-4 text-center font-semibold text-gray-400 bg-gray-50/30">22</td>
-                            <td class="py-3.5 px-6 font-bold text-gray-900 tracking-tight">Khoirunnisa Az-Zahra</td>
-                            <td class="py-3.5 px-6 font-medium text-gray-500">MTss DARUL FALAH</td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="text-gray-300 font-bold">-</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                        </tr>
-                        <tr class="hover:bg-gray-50/80 transition-colors">
-                            <td class="py-3.5 px-4 text-center font-semibold text-gray-400 bg-gray-50/30">23</td>
-                            <td class="py-3.5 px-6 font-bold text-gray-900 tracking-tight">Alvaro Yudhistira Kanz Roshdy</td>
-                            <td class="py-3.5 px-6 font-medium text-gray-500">MTs Darul Falah</td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="text-gray-300 font-bold">-</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                        </tr>
-                        <tr class="hover:bg-gray-50/80 transition-colors">
-                            <td class="py-3.5 px-4 text-center font-semibold text-gray-400 bg-gray-50/30">24</td>
-                            <td class="py-3.5 px-6 font-bold text-gray-900 tracking-tight">Barra Risqi Rafiis</td>
-                            <td class="py-3.5 px-6 font-medium text-gray-500">MTs Darul Falah</td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="text-gray-300 font-bold">-</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="px-2.5 py-1 text-xs font-bold rounded-lg bg-amber-50 text-amber-700 border border-amber-200 tracking-wide">IZIN</span></td>
-                        </tr>
-                        <tr class="hover:bg-gray-50/80 transition-colors">
-                            <td class="py-3.5 px-4 text-center font-semibold text-gray-400 bg-gray-50/30">25</td>
-                            <td class="py-3.5 px-6 font-bold text-gray-900 tracking-tight">Ibrahim Al-Qadr</td>
-                            <td class="py-3.5 px-6 font-medium text-gray-500">MTs Darul Falah</td>
-                            <td class="py-3.5 px-4 text-center"><span class="px-2.5 py-1 text-xs font-bold rounded-lg bg-amber-50 text-amber-700 border border-amber-200 tracking-wide">IZIN</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="px-2.5 py-1 text-xs font-bold rounded-lg bg-amber-50 text-amber-700 border border-amber-200 tracking-wide">IZIN</span></td>
-                        </tr>
-                        <tr class="hover:bg-gray-50/80 transition-colors">
-                            <td class="py-3.5 px-4 text-center font-semibold text-gray-400 bg-gray-50/30">26</td>
-                            <td class="py-3.5 px-6 font-bold text-gray-900 tracking-tight">Muhammad Hanafiz</td>
-                            <td class="py-3.5 px-6 font-medium text-gray-500">MTs Darul Falah</td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="text-gray-300 font-bold">-</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                        </tr>
-                        <tr class="hover:bg-gray-50/80 transition-colors">
-                            <td class="py-3.5 px-4 text-center font-semibold text-gray-400 bg-gray-50/30">27</td>
-                            <td class="py-3.5 px-6 font-bold text-gray-900 tracking-tight">Muhammad Rafli</td>
-                            <td class="py-3.5 px-6 font-medium text-gray-500">MTs Darul Falah</td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="text-gray-300 font-bold">-</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                        </tr>
-                        <tr class="hover:bg-gray-50/80 transition-colors">
-                            <td class="py-3.5 px-4 text-center font-semibold text-gray-400 bg-gray-50/30">28</td>
-                            <td class="py-3.5 px-6 font-bold text-gray-900 tracking-tight">Zaky Ilham Pradana</td>
-                            <td class="py-3.5 px-6 font-medium text-gray-500">MTs Darul Falah</td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="text-gray-300 font-bold">-</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="px-2.5 py-1 text-xs font-bold rounded-lg bg-amber-50 text-amber-700 border border-amber-200 tracking-wide">IZIN</span></td>
-                        </tr>
-                        <tr class="hover:bg-gray-50/80 transition-colors">
-                            <td class="py-3.5 px-4 text-center font-semibold text-gray-400 bg-gray-50/30">29</td>
-                            <td class="py-3.5 px-6 font-bold text-gray-900 tracking-tight">Anayda Arifa Wicaksono</td>
-                            <td class="py-3.5 px-6 font-medium text-gray-500">MTs Darul Falah</td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="text-gray-300 font-bold">-</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                        </tr>
-                        <tr class="hover:bg-gray-50/80 transition-colors">
-                            <td class="py-3.5 px-4 text-center font-semibold text-gray-400 bg-gray-50/30">30</td>
-                            <td class="py-3.5 px-6 font-bold text-gray-900 tracking-tight">Samicha Fuqoha Qotrunnada</td>
-                            <td class="py-3.5 px-6 font-medium text-gray-500">MTSs DARUL FALAH</td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="text-gray-300 font-bold">-</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                        </tr>
-                        <tr class="hover:bg-gray-50/80 transition-colors">
-                            <td class="py-3.5 px-4 text-center font-semibold text-gray-400 bg-gray-50/30">31</td>
-                            <td class="py-3.5 px-6 font-bold text-gray-900 tracking-tight">Jojo Farhana Salsabila</td>
-                            <td class="py-3.5 px-6 font-medium text-gray-500">MTs Darul Falah</td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="text-gray-300 font-bold">-</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                        </tr>
-                        <tr class="hover:bg-gray-50/80 transition-colors">
-                            <td class="py-3.5 px-4 text-center font-semibold text-gray-400 bg-gray-50/30">32</td>
-                            <td class="py-3.5 px-6 font-bold text-gray-900 tracking-tight">Hilwa Quinsa Latifa Al-Azizi</td>
-                            <td class="py-3.5 px-6 font-medium text-gray-500">MTs Darul Falah</td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="text-gray-300 font-bold">-</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                        </tr>
-                        <tr class="hover:bg-gray-50/80 transition-colors">
-                            <td class="py-3.5 px-4 text-center font-semibold text-gray-400 bg-gray-50/30">33</td>
-                            <td class="py-3.5 px-6 font-bold text-gray-900 tracking-tight">Kafaa Bihi Rofiiqu Sya'bani</td>
-                            <td class="py-3.5 px-6 font-medium text-gray-500">MTs Darul Falah</td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                        </tr>
-                        <tr class="hover:bg-gray-50/80 transition-colors">
-                            <td class="py-3.5 px-4 text-center font-semibold text-gray-400 bg-gray-50/30">34</td>
-                            <td class="py-3.5 px-6 font-bold text-gray-900 tracking-tight">Azzahra Witri Chintya Putri</td>
-                            <td class="py-3.5 px-6 font-medium text-gray-500">MTs Darul Falah</td>
-                            <td class="py-3.5 px-4 text-center"><span class="px-2.5 py-1 text-xs font-bold rounded-lg bg-amber-50 text-amber-700 border border-amber-200 tracking-wide">IZIN</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="px-2.5 py-1 text-xs font-bold rounded-lg bg-amber-50 text-amber-700 border border-amber-200 tracking-wide">IZIN</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="px-2.5 py-1 text-xs font-bold rounded-lg bg-amber-50 text-amber-700 border border-amber-200 tracking-wide">IZIN</span></td>
-                        </tr>
-                        <tr class="hover:bg-gray-50/80 transition-colors">
-                            <td class="py-3.5 px-4 text-center font-semibold text-gray-400 bg-gray-50/30">35</td>
-                            <td class="py-3.5 px-6 font-bold text-gray-900 tracking-tight">Galih Rizal Syahputra</td>
-                            <td class="py-3.5 px-6 font-medium text-gray-500">MTs Darul Falah</td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="text-gray-300 font-bold">-</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="px-2.5 py-1 text-xs font-bold rounded-lg bg-amber-50 text-amber-700 border border-amber-200 tracking-wide">IZIN</span></td>
-                        </tr>
-                        <tr class="hover:bg-gray-50/80 transition-colors">
-                            <td class="py-3.5 px-4 text-center font-semibold text-gray-400 bg-gray-50/30">36</td>
-                            <td class="py-3.5 px-6 font-bold text-gray-900 tracking-tight">Haryuna Wardatul Azkiya</td>
-                            <td class="py-3.5 px-6 font-medium text-gray-500">MTs Al-Islam Jorsan</td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 shadow-sm font-bold text-sm">✓</span></td>
-                        </tr>
-                        <tr class="hover:bg-gray-50/80 transition-colors">
-                            <td class="py-3.5 px-4 text-center font-semibold text-gray-400 bg-gray-50/30">37</td>
-                            <td class="py-3.5 px-6 font-bold text-gray-900 tracking-tight">Ziva Rei Madani Putri</td>
-                            <td class="py-3.5 px-6 font-medium text-gray-500">SMP al muqoddasah</td>
-                            <td class="py-3.5 px-4 text-center"><span class="px-2.5 py-1 text-xs font-bold rounded-lg bg-amber-50 text-amber-700 border border-amber-200 tracking-wide">IZIN</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="px-2.5 py-1 text-xs font-bold rounded-lg bg-amber-50 text-amber-700 border border-amber-200 tracking-wide">IZIN</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="px-2.5 py-1 text-xs font-bold rounded-lg bg-amber-50 text-amber-700 border border-amber-200 tracking-wide">IZIN</span></td>
-                        </tr>
-                        <tr class="hover:bg-gray-50/80 transition-colors">
-                            <td class="py-3.5 px-4 text-center font-semibold text-gray-400 bg-gray-50/30">38</td>
-                            <td class="py-3.5 px-6 font-bold text-gray-900 tracking-tight">Fadhilatul chairah</td>
-                            <td class="py-3.5 px-6 font-medium text-gray-500">MTs Darul Falah</td>
-                            <td class="py-3.5 px-4 text-center"><span class="px-2.5 py-1 text-xs font-bold rounded-lg bg-blue-50 text-blue-700 border border-blue-200 tracking-wide">BARU</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="px-2.5 py-1 text-xs font-bold rounded-lg bg-blue-50 text-blue-700 border border-blue-200 tracking-wide">BARU</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="px-2.5 py-1 text-xs font-bold rounded-lg bg-blue-50 text-blue-700 border border-blue-200 tracking-wide">BARU</span></td>
-                        </tr>
-                        <tr class="hover:bg-gray-50/80 transition-colors">
-                            <td class="py-3.5 px-4 text-center font-semibold text-gray-400 bg-gray-50/30">39</td>
-                            <td class="py-3.5 px-6 font-bold text-gray-900 tracking-tight">Rifaya Alma Zhaliyla</td>
-                            <td class="py-3.5 px-6 font-medium text-gray-500">MTs Darul Falah</td>
-                            <td class="py-3.5 px-4 text-center"><span class="px-2.5 py-1 text-xs font-bold rounded-lg bg-blue-50 text-blue-700 border border-blue-200 tracking-wide">BARU</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="px-2.5 py-1 text-xs font-bold rounded-lg bg-blue-50 text-blue-700 border border-blue-200 tracking-wide">BARU</span></td>
-                            <td class="py-3.5 px-4 text-center"><span class="px-2.5 py-1 text-xs font-bold rounded-lg bg-blue-50 text-blue-700 border border-blue-200 tracking-wide">BARU</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+        <!-- TABEL UTAMA DATA (URUT ALFABETIS A-Z) -->
+        <div class="table-wrapper">
+            <table id="santriTable">
+                <thead>
+                    <tr>
+                        <th style="text-align: center; width: 50px;">No</th>
+                        <th>Nama Calon Santri</th>
+                        <th>Asal Sekolah</th>
+                        <th style="text-align: center; width: 130px;">Tes Psikologi</th>
+                        <th style="text-align: center; width: 130px;">Bakat Skolastik</th>
+                        <th style="text-align: center; width: 130px;">Ngaji Ummi</th>
+                        <th style="text-align: center; width: 130px;">Interview Wali</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="text-align: center; color: #9ca3af;">1</td>
+                        <td class="name-column">Agung Husada</td>
+                        <td>MTs Darul Falah</td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
+                        <td style="text-align: center;"><span class="badge badge-warning">IZIN</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; color: #9ca3af;">2</td>
+                        <td class="name-column">Aidil Firman Nurhakim</td>
+                        <td>MTs Darul Falah</td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; color: #9ca3af;">3</td>
+                        <td class="name-column">Alvaro Yudhistira Kanz Roshdy</td>
+                        <td>MTs Darul Falah</td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; color: #9ca3af;">4</td>
+                        <td class="name-column">Amira Hilmi Mahmudiana</td>
+                        <td>MTs Darul Falah</td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; color: #9ca3af;">5</td>
+                        <td class="name-column">Anayda Arifa Wicaksono</td>
+                        <td>MTs Darul Falah</td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; color: #9ca3af;">6</td>
+                        <td class="name-column">Aprilia Yaski Andria</td>
+                        <td>MTs Darul Falah</td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
+                        <td style="text-align: center;"><span class="badge badge-warning">IZIN</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; color: #9ca3af;">7</td>
+                        <td class="name-column">Athiyya Ghalia Mu'afira</td>
+                        <td>MTs Darul Falah</td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
+                        <td style="text-align: center;"><span class="badge badge-warning">IZIN</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; color: #9ca3af;">8</td>
+                        <td class="name-column">Ayatul Zhahra</td>
+                        <td>MTs Darul Falah</td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; color: #9ca3af;">9</td>
+                        <td class="name-column">Azzahra Witri Chintya Putri</td>
+                        <td>MTs Darul Falah</td>
+                        <td style="text-align: center;"><span class="badge badge-warning">IZIN</span></td>
+                        <td style="text-align: center;"><span class="badge badge-warning">IZIN</span></td>
+                        <td style="text-align: center;"><span class="badge badge-warning">IZIN</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; color: #9ca3af;">10</td>
+                        <td class="name-column">Barra Risqi Rafiis</td>
+                        <td>MTs Darul Falah</td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
+                        <td style="text-align: center;"><span class="badge badge-warning">IZIN</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; color: #9ca3af;">11</td>
+                        <td class="name-column">Caesa Atikha Dama Fadhila</td>
+                        <td>MTs Darul Falah</td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; color: #9ca3af;">12</td>
+                        <td class="name-column">Caesa Atikha Dama Rizqiya</td>
+                        <td>MTs Darul Falah</td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; color: #9ca3af;">13</td>
+                        <td class="name-column">Cantika Zaneta Merisqueen</td>
+                        <td>MTsN DARUL FALAH</td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; color: #9ca3af;">14</td>
+                        <td class="name-column">Ezza Zharifa Putri Rahmadita</td>
+                        <td>MTs Darul Falah</td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; color: #9ca3af;">15</td>
+                        <td class="name-column">Fadhilatul chairah</td>
+                        <td>MTs Darul Falah</td>
+                        <td style="text-align: center;"><span class="badge badge-info">BARU</span></td>
+                        <td style="text-align: center;"><span class="badge badge-info">BARU</span></td>
+                        <td style="text-align: center;"><span class="badge badge-info">BARU</span></td>
+                        <td style="text-align: center;"><span class="badge badge-info">BARU</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; color: #9ca3af;">16</td>
+                        <td class="name-column">Fairuz Auroera Nafisah</td>
+                        <td>MTs Darul Falah</td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; color: #9ca3af;">17</td>
+                        <td class="name-column">Galih Rizal Syahputra</td>
+                        <td>MTs Darul Falah</td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
+                        <td style="text-align: center;"><span class="badge badge-warning">IZIN</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; color: #9ca3af;">18</td>
+                        <td class="name-column">Hafis Choirur Raafi</td>
+                        <td>MTs Darul Falah</td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; color: #9ca3af;">19</td>
+                        <td class="name-column">Hafitzy Al Faizy</td>
+                        <td>MTs Darul Falah</td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; color: #9ca3af;">20</td>
+                        <td class="name-column">Haryuna Wardatul Azkiya</td>
+                        <td>MTs Al-Islam Jorsan</td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; color: #9ca3af;">21</td>
+                        <td class="name-column">Hilwa Quinsa Latifa Al-Azizi</td>
+                        <td>MTs Darul Falah</td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; color: #9ca3af;">22</td>
+                        <td class="name-column">Ibrahim Al-Qadr</td>
+                        <td>MTs Darul Falah</td>
+                        <td style="text-align: center;"><span class="badge badge-warning">IZIN</span></td>
+                        <td style="text-align: center;"><span class="badge badge-warning">IZIN</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge badge-warning">IZIN</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; color: #9ca3af;">23</td>
+                        <td class="name-column">Jameela Wifaq Ro</td>
+                        <td>MTs Darul Falah</td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
+                        <td style="text-align: center;"><span class="badge badge-warning">IZIN</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; color: #9ca3af;">24</td>
+                        <td class="name-column">Jojo Farhana Salsabila</td>
+                        <td>MTs Darul Falah</td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; color: #9ca3af;">25</td>
+                        <td class="name-column">Kafaa Bihi Rofiiqu Sya'bani</td>
+                        <td>MTs Darul Falah</td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; color: #9ca3af;">26</td>
+                        <td class="name-column">Khoirunnisa Az-Zahra</td>
+                        <td>MTss DARUL FALAH</td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; color: #9ca3af;">27</td>
+                        <td class="name-column">Kuni Mahbubah</td>
+                        <td>MTs Darul Falah</td>
+                        <td style="text-align: center;"><span class="badge badge-warning">IZIN</span></td>
+                        <td style="text-align: center;"><span class="badge badge-warning">IZIN</span></td>
+                        <td style="text-align: center;"><span class="badge badge-warning">IZIN</span></td>
+                        <td style="text-align: center;"><span class="badge badge-warning">IZIN</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; color: #9ca3af;">28</td>
+                        <td class="name-column">M. Fitroh F.</td>
+                        <td>MTs Darul Falah</td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
+                        <td style="text-align: center;"><span class="badge badge-warning">IZIN</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; color: #9ca3af;">29</td>
+                        <td class="name-column">Muhammad Hanan Ghifari</td>
+                        <td>MTs Darul Falah</td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
+                        <td style="text-align: center;"><span class="badge badge-warning">IZIN</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; color: #9ca3af;">30</td>
+                        <td class="name-column">Muhammad Hanafiz</td>
+                        <td>MTs Darul Falah</td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; color: #9ca3af;">31</td>
+                        <td class="name-column">Muhammad Rafli</td>
+                        <td>MTs Darul Falah</td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; color: #9ca3af;">32</td>
+                        <td class="name-column">Muhammad Rayhan Endrika Saputra</td>
+                        <td>MTs Darul Falah</td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; color: #9ca3af;">33</td>
+                        <td class="name-column">Ocehren Noryn Mila Rahmawati</td>
+                        <td>MTs Darul Falah</td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; color: #9ca3af;">34</td>
+                        <td class="name-column">Rifaya Alma Zhaliyla</td>
+                        <td>MTs Darul Falah</td>
+                        <td style="text-align: center;"><span class="badge badge-info">BARU</span></td>
+                        <td style="text-align: center;"><span class="badge badge-info">BARU</span></td>
+                        <td style="text-align: center;"><span class="badge badge-info">BARU</span></td>
+                        <td style="text-align: center;"><span class="badge badge-info">BARU</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; color: #9ca3af;">35</td>
+                        <td class="name-column">Samicha Fuqoha Qotrunnada</td>
+                        <td>MTSs DARUL FALAH</td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; color: #9ca3af;">36</td>
+                        <td class="name-column">Yullyan Triyasnawi</td>
+                        <td>MTs Darul Falah</td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; color: #9ca3af;">37</td>
+                        <td class="name-column">Zaky Ilham Pradana</td>
+                        <td>MTs Darul Falah</td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
+                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
+                        <td style="text-align: center;"><span class="badge badge-warning">IZIN</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; color: #9ca3af;">38</td>
+                        <td class="name-column">Ziva Rei Madani Putri</td>
+                        <td>SMP al muqoddasah</td>
+                        <td style="text-align: center;"><span class="badge badge-warning">IZIN</span></td>
+                        <td style="text-align: center;"><span class="badge badge-warning">IZIN</span></td>
+                        <td style="text-align: center;"><span class="badge badge-warning">IZIN</span></td>
+                        <td style="text-align: center;"><span class="badge badge-warning">IZIN</span></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 
-    <!-- SCRIPT INTERAKTIF JAVASCRIPT -->
+    <!-- SCRIPT FILTER PENCARIAN -->
     <script>
         function filterTable() {
-            const input = document.getElementById("searchBar");
-            const filter = input.value.toLowerCase();
-            const table = document.getElementById("santriTable");
-            const tr = table.getElementsByTagName("tr");
+            var input = document.getElementById("searchBar");
+            var filter = input.value.toLowerCase();
+            var table = document.getElementById("santriTable");
+            var tr = table.getElementsByTagName("tr");
 
-            for (let i = 1; i < tr.length; i++) {
-                let rowVisible = false;
-                const tdNama = tr[i].getElementsByTagName("td")[1];
-                const tdSekolah = tr[i].getElementsByTagName("td")[2];
+            for (var i = 1; i < tr.length; i++) {
+                var rowVisible = false;
+                var tdNama = tr[i].getElementsByTagName("td")[1];
+                var tdSekolah = tr[i].getElementsByTagName("td")[2];
                 
                 if (tdNama || tdSekolah) {
-                    const textNama = tdNama.textContent || tdNama.innerText;
-                    const textSekolah = tdSekolah.textContent || tdSekolah.innerText;
+                    var textNama = tdNama.textContent || tdNama.innerText;
+                    var textSekolah = tdSekolah.textContent || tdSekolah.innerText;
                     
                     if (textNama.toLowerCase().indexOf(filter) > -1 || textSekolah.toLowerCase().indexOf(filter) > -1) {
                         rowVisible = true;
