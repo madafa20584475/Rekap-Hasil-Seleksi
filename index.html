@@ -5,120 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>REKAPITULASI KELENGKAPAN SELEKSI SANTRI BARU</title>
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f3f4f6;
-            color: #1f2937;
-            margin: 0;
-            padding: 20px;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .header-card {
-            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
-            color: white;
-            padding: 30px;
-            border-radius: 16px;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            margin-bottom: 24px;
-        }
-        .header-card h1 {
-            margin: 0 0 5px 0;
-            font-size: 24px;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-        }
-        .header-card p {
-            margin: 0;
-            color: #93c5fd;
-            font-size: 14px;
-        }
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 15px;
-            margin-top: 25px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 20px;
-        }
-        .stat-box {
-            background: rgba(255,255,255,0.05);
-            padding: 12px;
-            border-radius: 10px;
-            text-align: center;
-        }
-        .stat-box p {
-            margin: 0;
-            font-size: 11px;
-            color: #cbd5e1;
-        }
-        .stat-box .num {
-            margin-top: 5px;
-            font-size: 20px;
-            font-weight: bold;
-            color: white;
-        }
-        .search-container {
-            background: white;
-            padding: 15px;
-            border-radius: 12px;
-            border: 1px solid #e5e7eb;
-            margin-bottom: 20px;
-        }
-        .search-box {
-            width: 100%;
-            max-width: 350px;
-            padding: 10px 15px;
-            border: 1px solid #d1d5db;
-            border-radius: 8px;
-            font-size: 14px;
-            box-sizing: border-box;
-        }
-        .search-box:focus {
-            outline: none;
-            border-color: #2563eb;
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-        }
-        .table-wrapper {
-            background: white;
-            border-radius: 12px;
-            border: 1px solid #e5e7eb;
-            overflow-x: auto;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            text-align: left;
-            font-size: 14px;
-        }
-        th {
-            background: #f9fafb;
-            padding: 14px 16px;
-            color: #4b5563;
-            font-weight: 600;
-            font-size: 12px;
-            text-transform: uppercase;
-            border-bottom: 2px solid #e5e7eb;
-        }
-        td {
-            padding: 12px 16px;
-            border-bottom: 1px solid #f3f4f6;
-            color: #374151;
-        }
-        tr:hover td {
-            background-color: #f9fafb;
-        }
-        .badge {
-            display: inline-block;
-            padding: 4px 10px;
-            border-radius: 6px;
-            font-size: 11px;
-            font-weight: bold;
-            text-align: center;
-        }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f3f4f6; color: #1f2937; margin: 0; padding: 20px; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .header-card { background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%); color: white; padding: 30px; border-radius: 16px; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); margin-bottom: 24px; }
+        .header-card h1 { margin: 0 0 5px 0; font-size: 24px; font-weight: 800; }
+        .header-card p { margin: 0; color: #93c5fd; font-size: 14px; }
+        .search-container { background: white; padding: 15px; border-radius: 12px; border: 1px solid #e5e7eb; margin-bottom: 20px; }
+        .search-box { width: 100%; max-width: 350px; padding: 10px 15px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; }
+        .table-wrapper { background: white; border-radius: 12px; border: 1px solid #e5e7eb; overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; text-align: left; font-size: 14px; }
+        th { background: #f9fafb; padding: 14px 16px; color: #4b5563; font-weight: 600; font-size: 12px; text-transform: uppercase; border-bottom: 2px solid #e5e7eb; }
+        td { padding: 12px 16px; border-bottom: 1px solid #f3f4f6; color: #374151; }
+        .badge { display: inline-block; padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: bold; text-align: center; }
         .badge-success { background: #d1fae5; color: #065f46; }
         .badge-warning { background: #fef3c7; color: #92400e; }
         .badge-info { background: #dbeafe; color: #1e40af; }
@@ -127,477 +25,79 @@
     </style>
 </head>
 <body>
-
     <div class="container">
-        <!-- HEADER UTAMA -->
         <div class="header-card">
-            <p style="color: #60a5fa; font-weight: bold; letter-spacing: 1px; margin-bottom: 5px;">PANITIA SELEKSI PSB</p>
             <h1>REKAPITULASI KELENGKAPAN SELEKSI SANTRI BARU</h1>
             <p>MA Darul Falah Sukorejo — Tahun Ajaran 2026/2027</p>
-            
-            <div class="stats-grid">
-                <div class="stat-box">
-                    <p>Total Calon Santri</p>
-                    <div class="num">44 Anak</div>
-                </div>
-                <div class="stat-box">
-                    <p style="color: #34d399;">Selesai Utama</p>
-                    <div class="num" style="color: #34d399;">24 Anak</div>
-                </div>
-                <div class="stat-box">
-                    <p style="color: #fbbf24;">Status Izin / Pending</p>
-                    <div class="num" style="color: #fbbf24;">18 Anak</div>
-                </div>
-                <div class="stat-box">
-                    <p style="color: #60a5fa;">Pendaftar Baru</p>
-                    <div class="num" style="color: #60a5fa;">2 Anak</div>
-                </div>
-            </div>
         </div>
 
-        <!-- FITUR PENCARIAN -->
         <div class="search-container">
             <input type="text" id="searchBar" onkeyup="filterTable()" placeholder="Cari nama anak atau asal sekolah..." class="search-box">
         </div>
 
-        <!-- TABEL UTAMA DATA (URUT ALFABETIS A-Z) -->
         <div class="table-wrapper">
             <table id="santriTable">
                 <thead>
                     <tr>
-                        <th style="text-align: center; width: 50px;">No</th>
-                        <th>Nama Calon Santri</th>
-                        <th>Asal Sekolah</th>
-                        <th style="text-align: center; width: 130px;">Tes Psikologi</th>
-                        <th style="text-align: center; width: 130px;">Bakat Skolastik</th>
-                        <th style="text-align: center; width: 130px;">Ngaji Ummi</th>
-                        <th style="text-align: center; width: 130px;">Interview Wali</th>
+                        <th>No</th><th>Nama Calon Santri</th><th>Asal Sekolah</th>
+                        <th>Psikologi</th><th>Bakat</th><th>Ummi</th><th>Interview</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td style="text-align: center; color: #9ca3af;">1</td>
-                        <td class="name-column">Agung Husada</td>
-                        <td>MTs. Darul Falah</td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
-                        <td style="text-align: center;"><span class="badge badge-warning">IZIN</span></td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center; color: #9ca3af;">2</td>
-                        <td class="name-column">Aidil Firman Nurhakim</td>
-                        <td>MTs. Darul Falah</td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center; color: #9ca3af;">3</td>
-                        <td class="name-column">Alvaro Yudhistira Kanz Roshdy</td>
-                        <td>MTs. Darul Falah</td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center; color: #9ca3af;">4</td>
-                        <td class="name-column">Amira Hilmi Mahmudiana</td>
-                        <td>MTs. Darul Falah</td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center; color: #9ca3af;">5</td>
-                        <td class="name-column">Anayda Arifa Wicaksono</td>
-                        <td>MTs. Darul Falah</td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center; color: #9ca3af;">6</td>
-                        <td class="name-column">Aprilia Yaski Andria</td>
-                        <td>MTs. Darul Falah</td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
-                        <td style="text-align: center;"><span class="badge badge-warning">IZIN</span></td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center; color: #9ca3af;">7</td>
-                        <td class="name-column">Athiyya Ghalia Mu'afira</td>
-                        <td>MTs. Darul Falah</td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
-                        <td style="text-align: center;"><span class="badge badge-warning">IZIN</span></td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center; color: #9ca3af;">8</td>
-                        <td class="name-column">Ayatul Zhahra</td>
-                        <td>MTs. Darul Falah</td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center; color: #9ca3af;">9</td>
-                        <td class="name-column">Azzahra Witri Chintya Putri</td>
-                        <td>MTs. Darul Falah</td>
-                        <td style="text-align: center;"><span class="badge badge-warning">IZIN</span></td>
-                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
-                        <td style="text-align: center;"><span class="badge badge-warning">IZIN</span></td>
-                        <td style="text-align: center;"><span class="badge badge-warning">IZIN</span></td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center; color: #9ca3af;">10</td>
-                        <td class="name-column">Barra Risqi Rafiis</td>
-                        <td>MTs. Darul Falah</td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
-                        <td style="text-align: center;"><span class="badge badge-warning">IZIN</span></td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center; color: #9ca3af;">11</td>
-                        <td class="name-column">Caesa Atikha Dama Fadhila</td>
-                        <td>MTs. Darul Falah</td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center; color: #9ca3af;">12</td>
-                        <td class="name-column">Caesa Atikha Dama Rizqiya</td>
-                        <td>MTs. Darul Falah</td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center; color: #9ca3af;">13</td>
-                        <td class="name-column">Cantika Zaneta Merisqueen</td>
-                        <td>MTs. Darul Falah</td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center; color: #9ca3af;">14</td>
-                        <td class="name-column">Dimas Ade Putra</td>
-                        <td>MTs. Darul Falah</td>
-                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
-                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center; color: #9ca3af;">15</td>
-                        <td class="name-column">Dzikri Farhana Assidqy</td>
-                        <td>MTs. Darul Falah</td>
-                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
-                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center; color: #9ca3af;">16</td>
-                        <td class="name-column">Ezza Zharifa Putri Rahmadita</td>
-                        <td>MTs. Darul Falah</td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center; color: #9ca3af;">17</td>
-                        <td class="name-column">Fadhilatul chairah</td>
-                        <td>MTs. Darul Falah</td>
-                        <td style="text-align: center;"><span class="badge badge-info">BARU</span></td>
-                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
-                        <td style="text-align: center;"><span class="badge badge-info">BARU</span></td>
-                        <td style="text-align: center;"><span class="badge badge-info">BARU</span></td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center; color: #9ca3af;">18</td>
-                        <td class="name-column">Fairuz Auroera Nafisah</td>
-                        <td>MTs. Darul Falah</td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center; color: #9ca3af;">19</td>
-                        <td class="name-column">Galih Rizal Syahputra</td>
-                        <td>MTs. Darul Falah</td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
-                        <td style="text-align: center;"><span class="badge badge-warning">IZIN</span></td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center; color: #9ca3af;">20</td>
-                        <td class="name-column">Hafis Choirur Raafi</td>
-                        <td>MTs. Darul Falah</td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center; color: #9ca3af;">21</td>
-                        <td class="name-column">Hafitzy Al Faizy</td>
-                        <td>MTs. Darul Falah</td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
-                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center; color: #9ca3af;">22</td>
-                        <td class="name-column">Haryuna Wardatul Azkiya</td>
-                        <td>MTs. Al-Islam Jorsan</td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center; color: #9ca3af;">23</td>
-                        <td class="name-column">Hilwa Quinsa Latifa Al-Azizi</td>
-                        <td>MTs. Darul Falah</td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
-                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center; color: #9ca3af;">24</td>
-                        <td class="name-column">Ibrahim Al-Qadr</td>
-                        <td>MTs. Darul Falah</td>
-                        <td style="text-align: center;"><span class="badge badge-warning">IZIN</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge badge-warning">IZIN</span></td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center; color: #9ca3af;">25</td>
-                        <td class="name-column">Istiqomah Lutfi Abdillah</td>
-                        <td>MTs. Darul Falah</td>
-                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
-                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center; color: #9ca3af;">26</td>
-                        <td class="name-column">Jameela Wifaq Ro</td>
-                        <td>MTs. Darul Falah</td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
-                        <td style="text-align: center;"><span class="badge badge-warning">IZIN</span></td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center; color: #9ca3af;">27</td>
-                        <td class="name-column">Jojo Farhana Salsabila</td>
-                        <td>MTs. Darul Falah</td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
-                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center; color: #9ca3af;">28</td>
-                        <td class="name-column">Kafaa Bihi Rofiiqu Sya'bani</td>
-                        <td>MTs. Darul Falah</td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center; color: #9ca3af;">29</td>
-                        <td class="name-column">Khoirunnisa Az-Zahra</td>
-                        <td>MTs. Darul Falah</td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center; color: #9ca3af;">30</td>
-                        <td class="name-column">Kuni Mahbubah</td>
-                        <td>MTs. Darul Falah</td>
-                        <td style="text-align: center;"><span class="badge badge-warning">IZIN</span></td>
-                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
-                        <td style="text-align: center;"><span class="badge badge-warning">IZIN</span></td>
-                        <td style="text-align: center;"><span class="badge badge-warning">IZIN</span></td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center; color: #9ca3af;">31</td>
-                        <td class="name-column">Lovenzza Aurel Cella Azzahra</td>
-                        <td>MTs. Darul Falah</td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
-                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center; color: #9ca3af;">32</td>
-                        <td class="name-column">M. Fitroh F.</td>
-                        <td>MTs. Darul Falah</td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
-                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
-                        <td style="text-align: center;"><span class="badge badge-warning">IZIN</span></td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center; color: #9ca3af;">33</td>
-                        <td class="name-column">M. Afandi</td>
-                        <td>MTs. Darul Falah</td>
-                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
-                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center; color: #9ca3af;">34</td>
-                        <td class="name-column">Muhammad Hanan Ghifari</td>
-                        <td>MTs. Darul Falah</td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
-                        <td style="text-align: center;"><span class="badge badge-warning">IZIN</span></td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center; color: #9ca3af;">35</td>
-                        <td class="name-column">Muhammad Hanafiz</td>
-                        <td>MTs. Darul Falah</td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center; color: #9ca3af;">36</td>
-                        <td class="name-column">Muhammad Rafli</td>
-                        <td>MTs. Darul Falah</td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center; color: #9ca3af;">37</td>
-                        <td class="name-column">Muhammad Rayhan Endrika Saputra</td>
-                        <td>MTs. Darul Falah</td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center; color: #9ca3af;">38</td>
-                        <td class="name-column">Ocehren Noryn Mila Rahmawati</td>
-                        <td>MTs. Darul Falah</td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center; color: #9ca3af;">39</td>
-                        <td class="name-column">Rifaya Alma Zhaliyla</td>
-                        <td>MTs. Darul Falah</td>
-                        <td style="text-align: center;"><span class="badge badge-info">BARU</span></td>
-                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
-                        <td style="text-align: center;"><span class="badge badge-info">BARU</span></td>
-                        <td style="text-align: center;"><span class="badge badge-info">BARU</span></td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center; color: #9ca3af;">40</td>
-                        <td class="name-column">Samicha Fuqoha Qotrunnada</td>
-                        <td>MTs. Darul Falah</td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center; color: #9ca3af;">41</td>
-                        <td class="name-column">Yullyan Triyasnawi</td>
-                        <td>MTs. Darul Falah</td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center; color: #9ca3af;">42</td>
-                        <td class="name-column">Zaky Ilham Pradana</td>
-                        <td>MTs. Darul Falah</td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
-                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
-                        <td style="text-align: center;"><span class="badge badge-warning">IZIN</span></td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center; color: #9ca3af;">43</td>
-                        <td class="name-column">Ziva Rei Madani Putri</td>
-                        <td>SMP Al-Muqoddasah</td>
-                        <td style="text-align: center;"><span class="badge badge-warning">IZIN</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge badge-warning">IZIN</span></td>
-                        <td style="text-align: center;"><span class="badge badge-warning">IZIN</span></td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center; color: #9ca3af;">44</td>
-                        <td class="name-column">Kafaa Bihi Rofiiqu Syabani</td>
-                        <td>MTN 10 Magetan</td>
-                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
-                        <td style="text-align: center;"><span class="badge badge-success">✓ SUDAH</span></td>
-                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
-                        <td style="text-align: center;"><span class="badge-empty">-</span></td>
-                    </tr>
+                    <!-- Data 43 Santri -->
+                    <tr><td>1</td><td class="name-column">Agung Husada</td><td>MTs. Darul Falah</td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge-empty">-</span></td><td><span class="badge badge-warning">IZIN</span></td></tr>
+                    <tr><td>2</td><td class="name-column">Aidil Firman Nurhakim</td><td>MTs. Darul Falah</td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge-empty">-</span></td><td><span class="badge badge-success">SUDAH</span></td></tr>
+                    <tr><td>3</td><td class="name-column">Alvaro Yudhistira Kanz Rosydi</td><td>MTs. Darul Falah</td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge-empty">-</span></td><td><span class="badge badge-success">SUDAH</span></td></tr>
+                    <tr><td>4</td><td class="name-column">Amira Hilmi Mahmudiana</td><td>MTs. Darul Falah</td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge-empty">-</span></td><td><span class="badge badge-success">SUDAH</span></td></tr>
+                    <tr><td>5</td><td class="name-column">Anayda Arifa Wicaksono</td><td>MTs. Darul Falah</td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge-empty">-</span></td><td><span class="badge badge-success">SUDAH</span></td></tr>
+                    <tr><td>6</td><td class="name-column">Aprilia Yaski Andria</td><td>MTs. Darul Falah</td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge-empty">-</span></td><td><span class="badge badge-warning">IZIN</span></td></tr>
+                    <tr><td>7</td><td class="name-column">Athiyya Ghalia Mu'afira</td><td>MTs. Darul Falah</td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge-empty">-</span></td><td><span class="badge badge-warning">IZIN</span></td></tr>
+                    <tr><td>8</td><td class="name-column">Ayatul Zhahra</td><td>MTs. Darul Falah</td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge-empty">-</span></td><td><span class="badge badge-success">SUDAH</span></td></tr>
+                    <tr><td>9</td><td class="name-column">Azzahra Witri Chintya Putri</td><td>MTs. Darul Falah</td><td><span class="badge badge-warning">IZIN</span></td><td><span class="badge-empty">-</span></td><td><span class="badge badge-warning">IZIN</span></td><td><span class="badge badge-warning">IZIN</span></td></tr>
+                    <tr><td>10</td><td class="name-column">Barra Risqi Rafiis</td><td>MTs. Darul Falah</td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge-empty">-</span></td><td><span class="badge badge-warning">IZIN</span></td></tr>
+                    <tr><td>11</td><td class="name-column">Caesa Atikha Dama Fadhila</td><td>MTs. Darul Falah</td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge-empty">-</span></td><td><span class="badge badge-success">SUDAH</span></td></tr>
+                    <tr><td>12</td><td class="name-column">Caesa Atikha Dama Rizqiya</td><td>MTs. Darul Falah</td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge-empty">-</span></td><td><span class="badge badge-success">SUDAH</span></td></tr>
+                    <tr><td>13</td><td class="name-column">Cantika Zaneta Merisqueen</td><td>MTs. Darul Falah</td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge-empty">-</span></td><td><span class="badge badge-success">SUDAH</span></td></tr>
+                    <tr><td>14</td><td class="name-column">Dimas Ade Putra</td><td>MTs. Darul Falah</td><td><span class="badge-empty">-</span></td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge-empty">-</span></td><td><span class="badge-empty">-</span></td></tr>
+                    <tr><td>15</td><td class="name-column">Dzikri Farhana Assidqy</td><td>MTs. Darul Falah</td><td><span class="badge-empty">-</span></td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge-empty">-</span></td><td><span class="badge-empty">-</span></td></tr>
+                    <tr><td>16</td><td class="name-column">Ezza Zharifa Putri Rahmadita</td><td>MTs. Darul Falah</td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge-empty">-</span></td><td><span class="badge badge-success">SUDAH</span></td></tr>
+                    <tr><td>17</td><td class="name-column">Fadhilatul Chairah</td><td>MTs. Darul Falah</td><td><span class="badge badge-info">BARU</span></td><td><span class="badge-empty">-</span></td><td><span class="badge badge-info">BARU</span></td><td><span class="badge badge-info">BARU</span></td></tr>
+                    <tr><td>18</td><td class="name-column">Fairuz Auroera Nafisah</td><td>MTs. Darul Falah</td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge-empty">-</span></td><td><span class="badge badge-success">SUDAH</span></td></tr>
+                    <tr><td>19</td><td class="name-column">Galih Rizal Syahputra</td><td>MTs. Darul Falah</td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge-empty">-</span></td><td><span class="badge badge-warning">IZIN</span></td></tr>
+                    <tr><td>20</td><td class="name-column">Hafis Choirur Raafi</td><td>MTs. Darul Falah</td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge-empty">-</span></td><td><span class="badge badge-success">SUDAH</span></td></tr>
+                    <tr><td>21</td><td class="name-column">Hafitzy Al Faizy</td><td>MTs. Darul Falah</td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge-empty">-</span></td><td><span class="badge-empty">-</span></td><td><span class="badge badge-success">SUDAH</span></td></tr>
+                    <tr><td>22</td><td class="name-column">Haryuna Wardatul Azkiya</td><td>MTs. Al-Islam Jorsan</td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge badge-success">SUDAH</span></td></tr>
+                    <tr><td>23</td><td class="name-column">Hilwa Quinsa Latifa Al-Azizi</td><td>MTs. Darul Falah</td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge-empty">-</span></td><td><span class="badge-empty">-</span></td><td><span class="badge badge-success">SUDAH</span></td></tr>
+                    <tr><td>24</td><td class="name-column">Ibrahim Al-Qadr</td><td>MTs. Darul Falah</td><td><span class="badge badge-warning">IZIN</span></td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge badge-warning">IZIN</span></td></tr>
+                    <tr><td>25</td><td class="name-column">Istiqomah Lutfi Abdillah</td><td>MTs. Darul Falah</td><td><span class="badge-empty">-</span></td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge-empty">-</span></td><td><span class="badge-empty">-</span></td></tr>
+                    <tr><td>26</td><td class="name-column">Jameela Wifaq Ro</td><td>MTs. Darul Falah</td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge-empty">-</span></td><td><span class="badge badge-warning">IZIN</span></td></tr>
+                    <tr><td>27</td><td class="name-column">Jojo Farhana Salsabila</td><td>MTs. Darul Falah</td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge-empty">-</span></td><td><span class="badge-empty">-</span></td><td><span class="badge badge-success">SUDAH</span></td></tr>
+                    <tr><td>28</td><td class="name-column">Kafaa Bihi Rofiiqu Syabani</td><td>MTs. Negeri 10 Magetan</td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge badge-success">SUDAH</span></td></tr>
+                    <tr><td>29</td><td class="name-column">Khoirunnisa Az-Zahra</td><td>MTs. Darul Falah</td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge-empty">-</span></td><td><span class="badge badge-success">SUDAH</span></td></tr>
+                    <tr><td>30</td><td class="name-column">Kuni Mahbubah</td><td>MTs. Darul Falah</td><td><span class="badge badge-warning">IZIN</span></td><td><span class="badge-empty">-</span></td><td><span class="badge badge-warning">IZIN</span></td><td><span class="badge badge-warning">IZIN</span></td></tr>
+                    <tr><td>31</td><td class="name-column">Lovenzza Aurel Cella Azzahra</td><td>MTs. Darul Falah</td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge-empty">-</span></td><td><span class="badge-empty">-</span></td></tr>
+                    <tr><td>32</td><td class="name-column">M. Afandi</td><td>MTs. Darul Falah</td><td><span class="badge-empty">-</span></td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge-empty">-</span></td><td><span class="badge-empty">-</span></td></tr>
+                    <tr><td>33</td><td class="name-column">M. Fitroh F.</td><td>MTs. Darul Falah</td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge-empty">-</span></td><td><span class="badge-empty">-</span></td><td><span class="badge badge-warning">IZIN</span></td></tr>
+                    <tr><td>34</td><td class="name-column">Muhammad Hanafiz</td><td>MTs. Darul Falah</td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge-empty">-</span></td><td><span class="badge badge-success">SUDAH</span></td></tr>
+                    <tr><td>35</td><td class="name-column">Muhammad Hanan Ghifari</td><td>MTs. Darul Falah</td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge-empty">-</span></td><td><span class="badge badge-warning">IZIN</span></td></tr>
+                    <tr><td>36</td><td class="name-column">Muhammad Rafli</td><td>MTs. Darul Falah</td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge-empty">-</span></td><td><span class="badge badge-success">SUDAH</span></td></tr>
+                    <tr><td>37</td><td class="name-column">Muhammad Rayhan Endrika Saputra</td><td>MTs. Darul Falah</td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge-empty">-</span></td><td><span class="badge badge-success">SUDAH</span></td></tr>
+                    <tr><td>38</td><td class="name-column">Ocehren Noryn Mila Rahmawati</td><td>MTs. Darul Falah</td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge-empty">-</span></td><td><span class="badge badge-success">SUDAH</span></td></tr>
+                    <tr><td>39</td><td class="name-column">Rifaya Alma Zhaliyla</td><td>MTs. Darul Falah</td><td><span class="badge badge-info">BARU</span></td><td><span class="badge-empty">-</span></td><td><span class="badge badge-info">BARU</span></td><td><span class="badge badge-info">BARU</span></td></tr>
+                    <tr><td>40</td><td class="name-column">Samicha Fuqoha Qotrunnada</td><td>MTs. Darul Falah</td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge-empty">-</span></td><td><span class="badge badge-success">SUDAH</span></td></tr>
+                    <tr><td>41</td><td class="name-column">Yullyan Triyasnawi</td><td>MTs. Darul Falah</td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge-empty">-</span></td><td><span class="badge badge-success">SUDAH</span></td></tr>
+                    <tr><td>42</td><td class="name-column">Zaky Ilham Pradana</td><td>MTs. Darul Falah</td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge-empty">-</span></td><td><span class="badge-empty">-</span></td><td><span class="badge badge-warning">IZIN</span></td></tr>
+                    <tr><td>43</td><td class="name-column">Ziva Rei Madani Putri</td><td>SMP Al-Muqoddasah</td><td><span class="badge badge-warning">IZIN</span></td><td><span class="badge badge-success">SUDAH</span></td><td><span class="badge badge-warning">IZIN</span></td><td><span class="badge badge-warning">IZIN</span></td></tr>
                 </tbody>
             </table>
         </div>
     </div>
-
-    <!-- SCRIPT FILTER PENCARIAN -->
     <script>
         function filterTable() {
-            var input = document.getElementById("searchBar");
-            var filter = input.value.toLowerCase();
-            var table = document.getElementById("santriTable");
-            var tr = table.getElementsByTagName("tr");
-
+            var input = document.getElementById("searchBar").value.toLowerCase();
+            var tr = document.getElementById("santriTable").getElementsByTagName("tr");
             for (var i = 1; i < tr.length; i++) {
-                var rowVisible = false;
-                var tdNama = tr[i].getElementsByTagName("td")[1];
-                var tdSekolah = tr[i].getElementsByTagName("td")[2];
-                
-                if (tdNama || tdSekolah) {
-                    var textNama = tdNama.textContent || tdNama.innerText;
-                    var textSekolah = tdSekolah.textContent || tdSekolah.innerText;
-                    
-                    if (textNama.toLowerCase().indexOf(filter) > -1 || textSekolah.toLowerCase().indexOf(filter) > -1) {
-                        rowVisible = true;
-                    }
-                }
-                tr[i].style.display = rowVisible ? "" : "none";
+                tr[i].style.display = (tr[i].innerText.toLowerCase().indexOf(input) > -1) ? "" : "none";
             }
         }
     </script>
