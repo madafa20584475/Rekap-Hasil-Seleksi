@@ -10,6 +10,13 @@
         .header-card { background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%); color: white; padding: 30px; border-radius: 16px; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); margin-bottom: 24px; }
         .header-card h1 { margin: 0 0 5px 0; font-size: 24px; font-weight: 800; }
         .header-card p { margin: 0; color: #93c5fd; font-size: 14px; }
+        
+        /* Statistik Box */
+        .stats-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 20px; }
+        .stat-card { background: white; padding: 15px; border-radius: 12px; border: 1px solid #e5e7eb; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .stat-card h3 { margin: 0; font-size: 12px; color: #6b7280; text-transform: uppercase; }
+        .stat-card p { margin: 5px 0 0 0; font-size: 20px; font-weight: bold; color: #1e3a8a; }
+
         .search-container { background: white; padding: 15px; border-radius: 12px; border: 1px solid #e5e7eb; margin-bottom: 20px; }
         .search-box { width: 100%; max-width: 350px; padding: 10px 15px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; }
         .table-wrapper { background: white; border-radius: 12px; border: 1px solid #e5e7eb; overflow-x: auto; }
@@ -29,6 +36,14 @@
         <div class="header-card">
             <h1>REKAPITULASI KELENGKAPAN SELEKSI SANTRI BARU</h1>
             <p>MA Darul Falah Sukorejo — Tahun Ajaran 2026/2027</p>
+        </div>
+
+        <!-- Statistik Ringkasan -->
+        <div class="stats-container">
+            <div class="stat-card"><h3>Total Calon Santri</h3><p>43</p></div>
+            <div class="stat-card"><h3>Psikologi Selesai</h3><p>36</p></div>
+            <div class="stat-card"><h3>Bakat Selesai</h3><p>34</p></div>
+            <div class="stat-card"><h3>Interview Selesai</h3><p>27</p></div>
         </div>
 
         <div class="search-container">
